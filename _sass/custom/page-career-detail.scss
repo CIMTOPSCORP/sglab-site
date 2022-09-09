@@ -1,0 +1,46 @@
+
+
+.career-detail-page {
+	background: #000;
+
+	.container .wrap:not(.noSpaces), .container .wrap.spaceWrap, .container .wrap .spaceWrap {
+		padding: calc(5.56% + 50px) calc(2% + 15px);
+	}
+	.pad {
+		ul {
+			list-style: none;
+			li {
+				@include plumber(
+					$font-size: 3,
+					$line-height: 4,
+					$leading-top: 2,
+					$leading-bottom: 2,
+					$baseline: $body-baseline
+				);
+
+				text-rendering: optimizeLegibility;
+				opacity: 0.8;
+				margin-bottom: .05em;
+
+				&:before {
+					content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+					color: red; /* Change the color */
+					font-weight: bold; /* If you want it to be bold */
+					display: inline-block; /* Needed to add space between the bullet and the text */
+					width: 1em; /* Also needed for space (tweak if needed) */
+					margin-left: -1em; /* Also needed for space (tweak if needed) */
+					position: relative;
+					left: 0.25em;
+				}
+			}
+
+			& + h2 {
+				margin-top: 1em;
+			}
+		}
+	}
+
+	p + h2 {
+		margin-top: 0.5em;
+	}
+}

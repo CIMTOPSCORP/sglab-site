@@ -1,0 +1,109 @@
+{% for post in site.categories.homepage %}
+{% if post.title == "About" %}
+
+<section id="about" class="about slide fade kenBurns" data-name="about">
+	<div class="content">
+		<div class="container">
+			<div class="wrap about">
+				<div class="fix-12-12">
+
+
+					<ul class="slide-5 grid fixedSpaces equal fromCenter">
+
+						<li class="col-12-12">
+							{% for post in site.categories.about %}
+							{% if post.title == "About Address" %}
+							<div class="address">
+								<div class="box-70 ae-1">
+									<div class="thumbnail-70">
+										{% for image in site.static_files %}
+										{% if image.path contains 'img/homepage/about/grid0' %}
+										<img src="{{ site.baseurl }}{{ image.path }}" alt="Image">
+										{% endif %}
+										{% endfor %}
+									</div>
+									<div class="info-70">
+
+										{{ post.content }}
+									</div>
+								</div>
+							</div>
+							{% endif %}
+							{% endfor %}
+						</li>
+
+						{% for post in site.categories.about %}
+						{% if post.title == "About Contact" %}
+						<li class="col-4-12">
+							<a href="{{ site.mailto-contact }}" class="box-70 ae-3">
+								<div class="thumbnail-70">
+									{% for image in site.static_files %}
+									{% if image.path contains 'img/homepage/about/grid1' %}
+									<img class="wide" src="{{ site.baseurl }}{{ image.path }}" alt="Image">
+									{% endif %}
+									{% endfor %}
+								</div>
+								<div class="info-70">
+									{{ post.content }}
+								</div>
+							</a>
+						</li>
+						{% endif %}
+						{% endfor %}
+
+						{% for post in site.categories.about %}
+						{% if post.title == "About FAQ" %}
+						<li class="col-4-12">
+							<a href="{{ site.baseurl }}/faq/" class="box-70 ae-4">
+								<div class="thumbnail-70">
+									{% for image in site.static_files %}
+									{% if image.path contains 'img/homepage/about/grid2' %}
+									<img class="wide" src="{{ site.baseurl }}{{ image.path }}" alt="Image">
+									{% endif %}
+									{% endfor %}
+								</div>
+								<div class="info-70">
+									{{ post.content }}
+								</div>
+							</a>
+						</li>
+						{% endif %}
+						{% endfor %}
+
+						{% for post in site.categories.about %}
+						{% if post.title == "About Careers" %}
+						<li class="col-4-12">
+							<a href="{{ site.baseurl }}/ios-developer/" class="box-70 ae-5">
+								<div class="thumbnail-70">
+									{% for image in site.static_files %}
+									{% if image.path contains 'img/homepage/about/grid3' %}
+									<img class="wide" src="{{ site.baseurl }}{{ image.path }}" alt="Image">
+									{% endif %}
+									{% endfor %}
+								</div>
+								<div class="info-70" markdown="1">
+									{{ post.content }}
+								</div>
+							</a>
+						</li>
+						{% endif %}
+						{% endfor %}
+
+					</ul>
+				</div>
+				<div class="ae-5">
+				{{ post.content }}
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+	{% for image in site.static_files %}
+	{% if image.path contains 'img/homepage/about/bg' %}
+	<div class="background" style="background-image:url({{ site.baseurl }}{{ image.path }})"></div>
+	{% endif %}
+	{% endfor %}
+</section>
+{% endif %}
+{% endfor %}

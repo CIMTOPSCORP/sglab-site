@@ -1,0 +1,66 @@
+{% for post in site.categories.homepage %}
+{% if post.title == "Notator Cloud Feature" %}
+
+<section class="notator-cloud-feature slide fade kenBurns">
+	<div class="content">
+		<div class="container">
+			<div class="wrap">
+
+				<div class="fix-12-12">
+					<ul class="flex reverse">
+						{{ post.content }}
+						
+						{% for image in site.static_files %}
+							{% if image.path contains 'img/homepage/notator-cloud-feature/object' %}
+						<li class="col-6-12 left ae-1 fromAbove">
+							<img class="shiftImage shiftImageVertical image-73" src="{{ site.baseurl }}{{ image.path }}" data-action="zoom" alt="iPhone Image" />
+						</li>
+							{% endif %}
+						{% endfor %}
+					</ul>
+
+					<ul class="grid later fixedSpaces equal center grid-73">
+						
+						{% for post in site.categories.notatorCloudFeature %}
+						{% if post.title == "Notator Cloud Feature 1" %}
+						<li class="col-4-12 ae-5">
+							<div class="cell-73 equalElement">
+								{{ post.content }}
+							</div>
+						</li>
+						{% endif %}
+						{% endfor %}
+						
+						{% for post in site.categories.notatorCloudFeature %}
+						{% if post.title == "Notator Cloud Feature 2" %}
+						<li class="col-4-12 ae-6">
+							<div class="cell-73 equalElement">
+								{{ post.content }}
+							</div>
+						</li>
+						{% endif %}
+						{% endfor %}
+						
+						{% for post in site.categories.notatorCloudFeature %}
+						{% if post.title == "Notator Cloud Feature 3" %}
+						<li class="col-4-12 ae-7">
+							<div class="cell-73 equalElement last">
+								{{ post.content }}
+							</div>
+						</li>
+						{% endif %}
+						{% endfor %}
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	{% for image in site.static_files %}
+		{% if image.path contains 'img/homepage/notator-cloud-feature/bg' %}
+	<div class="background" style="background-image:url({{ site.baseurl }}{{ image.path }})"></div>
+		{% endif %}
+	{% endfor %}
+</section>
+{% endif %}
+{% endfor %}

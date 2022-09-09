@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+{% include head.html %}
+	<body class="support-page slides zen smooth animated">
+
+	{% include svg.html %}
+
+	{% include navigation.html %}
+
+
+
+
+<section class="slide fade kenBurns">
+  <div class="content">
+	<div class="container">
+	  <div class="wrap">
+
+		<div class="margin-top-3 fix-12-12 support-content">
+			{{ content }}
+
+			<ul class="flex left margin-top-6 ae-3">
+			  {% for post in site.categories.faq reversed %}
+				{% if post.url %}
+					<li class="col-6-12 margin-bottom-1 ae-3">
+						{{ post.content}}
+					</li>
+				{% endif %}
+			  {% endfor %}
+			</ul>
+
+		  <a href="{{ site.mailto-contact}}" class="button blue crop margin-top-4 ae-7">Ask a question</a>
+		</div>
+
+	  </div>
+	</div>
+  </div>
+  {% for image in site.static_files %}
+	  {% if image.path contains 'img/support/bg' %}
+  <div class="background" style="background-image:url({{ site.baseurl }}{{ image.path }})"></div>
+	  {% endif %}
+  {% endfor %}
+</section>
+
+
+
+
+<div class="loadingIcon"><svg class="loading-icon" id="loading-circle" viewBox="0 0 18 18"><circle class="circle" opacity=".1" stroke="#fff" stroke-width="2" stroke-miterlimit="10" cx="9" cy="9" r="8" fill="none"></circle><circle class="dash" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="1,100" cx="9" cy="9" r="8" fill="none"></circle></svg></div>
+
+	</body>
+</html>
