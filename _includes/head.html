@@ -25,6 +25,11 @@
 	<script src={{ "/assets/js/custom.js" | relative_url }} type="text/javascript" name="custom-scripts"></script>
 
 	<!-- Scripts -->
+	<script>
+	var host = "CIMTOPSCORP.github.io";
+	if ((host == window.location.host) && (window.location.protocol != "https:"))
+		window.location.protocol = "https";
+	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="{{ "/assets/js/plugins.js" | relative_url }}" type="text/javascript" name="plugins"></script>
 	<script src="{{ "/assets/js/slides.js" | relative_url }}" type="text/javascript" name="main-scripts"></script>
